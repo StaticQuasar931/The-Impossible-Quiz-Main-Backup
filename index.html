@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <!-- Charset & Viewport -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Canonical (Google Sites page for this embed) & Robots -->
+  <link rel="canonical" href="https://sites.google.com/view/staticquasar931/gm3z/the-impossible-quiz" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+
+  <!-- Title -->
+  <title>The Impossible Quiz Unblocked - StaticQuasar931 Flash Puzzle g@me</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://res.cloudinary.com/dlq5fztla/image/upload/v1761092315/The_Impossible_Quiz_Favicon_StaticQuasar931_fklcia.png" />
+
+  <!-- Primary SEO -->
+  <meta name="description" content="Play The Impossible Quiz unblocked with Ruffle - the classic tricky question flash puzzle. Works at school on Chromebook, PC, and mobile. Free, fullscreen, school safe, and fast loading." />
+  <meta name="keywords" content="The Impossible Quiz, The Impossible Quiz unblocked, impossible quiz answers, flash puzzle, school safe games, Chromebook games, browser quiz, StaticQuasar931, static 931, staticq931, staticquasar931, staticq, 931 games, unbl0cked g@mes" />
+  <meta name="theme-color" content="#000000" />
+
+  <!-- Open Graph / Twitter (metadata only - no visible artwork on page) -->
+  <meta property="og:title" content="The Impossible Quiz - Unblocked by StaticQuasar931" />
+  <meta property="og:description" content="Think outside the box. The classic flash puzzle now runs with Ruffle. Free, fullscreen, and school safe." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sites.google.com/view/staticquasar931/gm3z/the-impossible-quiz" />
+  <meta property="og:image" content="https://res.cloudinary.com/dlq5fztla/image/upload/v1761090959/flash_365143_card_a5fbku.png" />
+  <meta property="og:image:alt" content="The Impossible Quiz - classic flash puzzle thumbnail (StaticQuasar931)" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://res.cloudinary.com/dlq5fztla/image/upload/v1761090959/flash_365143_card_a5fbku.png" />
+  <meta name="twitter:image:alt" content="The Impossible Quiz - classic flash puzzle thumbnail (StaticQuasar931)" />
+
+  <!-- Preload icon & preview image -->
+  <link rel="preload" as="image" href="https://res.cloudinary.com/dlq5fztla/image/upload/v1761092315/The_Impossible_Quiz_Favicon_StaticQuasar931_fklcia.png" />
+  <link rel="preload" as="image" href="https://res.cloudinary.com/dlq5fztla/image/upload/v1761090959/flash_365143_card_a5fbku.png" />
+
+  <!-- Ruffle (Flash emulator) -->
+  <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+  <script>
+    // Ruffle global configuration for best compatibility
+    window.RufflePlayer = window.RufflePlayer || {};
+    window.RufflePlayer.config = {
+      autoplay: "on",
+      unmuteOverlay: "visible",
+      backgroundColor: "#000000",
+      letterbox: "fullscreen",
+      quality: "high",
+      showSwfDownload: false,
+      contextMenu: "off",
+      openUrlMode: "confirm",
+      warnOnUnsupportedContent: false,
+      allowScriptAccess: true
+    };
+  </script>
+
+  <style>
+    :root{
+      --brand:#5ee1ff;
+      --brand2:#9bffb7;
+      --shadow:0 10px 30px rgba(0,0,0,.4);
+      --glow:0 0 12px rgba(94,225,255,.65), 0 0 32px rgba(155,255,183,.35);
+    }
+    html, body{
+      margin:0; padding:0; height:100%;
+      background:#000; overflow:hidden;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+
+    /* Fullscreen game area */
+    #gameWrap{
+      position:fixed; inset:0; background:#000;
+      display:flex; align-items:center; justify-content:center;
+    }
+    ruffle-embed, .ruffle-player{
+      width:100vw; height:100vh; display:block; background:#000;
+    }
+
+    /* Static Menu (top-left) */
+    #staticMenu{
+      position:fixed; top:12px; left:12px; z-index:9999;
+      background:linear-gradient(135deg, rgba(20,20,28,.9), rgba(20,20,28,.6));
+      color:#e8f3ff; padding:10px 14px; border-radius:12px;
+      border:1px solid rgba(94,225,255,.35);
+      box-shadow:var(--glow), var(--shadow);
+      font-size:14px; user-select:none; display:flex; gap:10px; align-items:center;
+      animation:menuEnter .6s ease .15s both;
+    }
+    @keyframes menuEnter{from{opacity:0; transform:translateY(-8px)} to{opacity:1; transform:translateY(0)}}
+    #staticMenu a{ color:#5ee1ff; font-weight:800; text-decoration:none }
+    #closeStaticMenu{ color:#f55; cursor:pointer; padding:2px 6px; border-radius:6px; border:1px solid rgba(255,255,255,.15); background:rgba(255,255,255,.06) }
+
+    /* Rotating Icon (bottom-right): Google Form <-> Instagram */
+    #staticSlideMenu{
+      position:fixed; bottom:24px; right:24px; z-index:9999;
+      width:100px; height:100px; pointer-events:none; opacity:0;
+      transform:translateX(140px) scale(.96);
+    }
+    #staticSlideMenu a{ display:block; width:100%; height:100% }
+    #staticSlideMenu img{ width:100%; height:100%; object-fit:cover; border-radius:50%; }
+
+    /* 2s in/out slide; 5s visible; 20s hidden handled in JS */
+    .slide-in{ animation:slideIn 2s ease forwards }
+    .slide-out{ animation:slideOut 2s ease forwards }
+    @keyframes slideIn{ from{opacity:0; transform:translateX(140px) scale(.96)} to{opacity:1; transform:translateX(0) scale(1)} }
+    @keyframes slideOut{ from{opacity:1; transform:translateX(0) scale(1)} to{opacity:0; transform:translateX(140px) scale(.96)} }
+
+    /* Hidden SEO content (for crawlers only) */
+    .seo-hidden{
+      position:absolute; width:1px; height:1px; overflow:hidden;
+      clip:rect(1px,1px,1px,1px); white-space:nowrap;
+    }
+
+    /* Minimal helper for small screens to ensure no accidental scrollbars */
+    @media (max-width: 600px){
+      #staticMenu{ font-size:13px; padding:8px 12px }
+      #staticSlideMenu{ width:88px; height:88px }
+    }
+  </style>
+</head>
+<body>
+  <!-- Static Menu -->
+  <div id="staticMenu" role="region" aria-label="StaticQuasar menu">
+    <a href="https://sites.google.com/view/staticquasar931/gm3z" target="_blank" rel="noopener">More Unblocked Games by Static</a>
+    <span id="closeStaticMenu" title="Hide temporarily">✕</span>
+  </div>
+
+  <!-- Bottom-right rotating icon -->
+  <div id="staticSlideMenu" aria-live="polite">
+    <a id="staticSlideLink" href="https://sites.google.com/view/staticquasar931/google-form" target="_blank" rel="noopener" aria-label="Open Google Form">
+      <img id="staticSlideImg" src="https://res.cloudinary.com/dcsrqennd/image/upload/v1747533056/raw_um4pvq.png" alt="StaticQuasar931 Google Form - feedback and game requests" />
+    </a>
+  </div>
+
+  <!-- Game Embed via Ruffle -->
+  <div id="gameWrap">
+    <!-- Using ruffle-embed element for simplicity. The SWF path is relative to this HTML file. -->
+    <ruffle-embed id="rufflePlayer"
+      src="./TheImpossibleQuiz.swf"
+      quality="high"
+      allowScriptAccess="true"
+      allowfullscreen="true"
+      menu="false">
+    </ruffle-embed>
+  </div>
+
+  <!-- Hidden SEO -->
+  <div class="seo-hidden" aria-hidden="true">
+    <h1>The Impossible Quiz - Unblocked Flash Puzzle g@me</h1>
+    <p><strong>The Impossible Quiz</strong> is a legendary flash puzzle filled with trick questions, humor, and unexpected logic. This StaticQuasar931 page runs the original SWF using <strong>Ruffle</strong> so you can play in modern browsers without plugins. It is <strong>unblocked</strong>, <strong>school safe</strong>, and set to <strong>fullscreen</strong> by default for Chromebook, PC, and mobile.</p>
+    <p>Think different - many questions require lateral thinking, wordplay, or intentionally silly answers. Some include timed challenges or items that carry between stages. If you fail, remember which choices worked before to move faster on the next run. The charm is in its surprises, so read carefully, try unusual options, and keep a cool head.</p>
+    <ul>
+      <li>Works at school and work environments - no Flash plugin needed</li>
+      <li>Chromebook ready - optimized with Ruffle for smooth play</li>
+      <li>Instant fullscreen with stable scaling and keyboard support</li>
+      <li>Free to play - quick loading and consistent performance</li>
+    </ul>
+    <p>Keywords: The Impossible Quiz unblocked, impossible quiz online, impossible quiz answers list, classic flash quiz, brain teaser browser game, school safe puzzle, Chromebook compatible, StaticQuasar931, static 931, staticquasar931, staticq, staticq931, 931 games, unbl0cked game, unbl0cked g@me, free quiz.</p>
+    <p>More by Static: <a href="https://sites.google.com/view/staticquasar931/gm3z" target="_blank" rel="noopener">https://sites.google.com/view/staticquasar931/gm3z</a></p>
+  </div>
+
+  <script>
+    // Leave warning
+    window.onbeforeunload = () => "Leave this page? Your progress may not be saved.";
+
+    // Static Menu hide + auto-restore (3 mins)
+    (function(){
+      const menu = document.getElementById("staticMenu");
+      const btn  = document.getElementById("closeStaticMenu");
+      const KEY  = "sq931_staticMenu_hidden_until";
+      const restore = () => { menu.style.display = "flex"; };
+      const maybeHide = () => {
+        const until = parseInt(localStorage.getItem(KEY)||"0",10);
+        const now = Date.now();
+        if (until && now < until){
+          menu.style.display = "none";
+          setTimeout(restore, until - now);
+        }
+      };
+      if (btn){
+        btn.onclick = () => {
+          menu.style.display = "none";
+          const until = Date.now() + 180000; // 3 minutes
+          localStorage.setItem(KEY, String(until));
+          setTimeout(restore, 180000);
+        };
+      }
+      maybeHide();
+    })();
+
+    // Rotator: Google Form <-> Instagram (no Discord per default preference)
+    // Timings: 2s in, 5s visible, 2s out, then 20s hidden; repeat
+    (function(){
+      const wrap = document.getElementById("staticSlideMenu");
+      const a    = document.getElementById("staticSlideLink");
+      const img  = document.getElementById("staticSlideImg");
+
+      const FORM = {
+        src: "https://res.cloudinary.com/dcsrqennd/image/upload/v1747533056/raw_um4pvq.png",
+        alt: "StaticQuasar931 Google Form - feedback and game requests",
+        link:"https://sites.google.com/view/staticquasar931/google-form"
+      };
+      const INSTA = {
+        src: "https://res.cloudinary.com/dcsrqennd/image/upload/v1747533158/raw_cw34yi.png",
+        alt: "StaticQuasar931 Instagram - opens in a new tab",
+        link:"https://www.instagram.com/freeschoolgamepage/"
+      };
+      const ROTATION = [FORM, INSTA];
+
+      const T_IN = 2000, T_SHOW = 5000, T_OUT = 2000, T_HIDDEN = 20000;
+
+      // Preload all
+      ROTATION.forEach(o => { const p=new Image(); p.src=o.src; });
+
+      let idx = 0;
+      function apply(state){
+        img.src = state.src; img.alt = state.alt; a.href = state.link;
+      }
+
+      async function cycle(){
+        for(;;){
+          const state = ROTATION[idx];
+          apply(state);
+
+          // slide in + show
+          wrap.style.pointerEvents = "auto";
+          wrap.classList.remove("slide-out");
+          wrap.classList.add("slide-in");
+          await new Promise(r=>setTimeout(r, T_IN + T_SHOW));
+
+          // slide out
+          wrap.classList.remove("slide-in");
+          wrap.classList.add("slide-out");
+          await new Promise(r=>setTimeout(r, T_OUT));
+          wrap.style.pointerEvents = "none";
+
+          // hidden gap
+          await new Promise(r=>setTimeout(r, T_HIDDEN));
+
+          idx = (idx + 1) % ROTATION.length;
+        }
+      }
+
+      // initial apply & start
+      apply(ROTATION[idx]);
+      cycle();
+    })();
+
+    // Responsive sizing helper - ensures the Ruffle player always fits viewport height on mobile
+    (function(){
+      const player = document.getElementById('rufflePlayer');
+      const resize = () => {
+        const h = (window.visualViewport ? window.visualViewport.height : window.innerHeight);
+        const w = window.innerWidth;
+        player.style.height = h + 'px';
+        player.style.width  = w + 'px';
+      };
+      resize();
+      addEventListener('resize', resize, {passive:true});
+      if (window.visualViewport) window.visualViewport.addEventListener('resize', resize, {passive:true});
+    })();
+
+    // Fallback in case ruffle-embed custom element is not defined yet - create via JS API
+    (function ensureRuffle(){
+      function mountRuffle(){
+        const container = document.getElementById('gameWrap');
+        if (!container) return;
+
+        // If the custom element is already upgraded, skip
+        if (customElements.get('ruffle-embed')) return;
+
+        // Otherwise, build programmatically as a backup
+        const ruffle = window.RufflePlayer && window.RufflePlayer.newest();
+        if (!ruffle) return;
+
+        // Avoid double mount
+        if (document.getElementById('rufflePlayerJS')) return;
+
+        const player = ruffle.createPlayer();
+        player.id = "rufflePlayerJS";
+        player.style.width = "100vw";
+        player.style.height = "100vh";
+        container.innerHTML = "";
+        container.appendChild(player);
+        player.load("./TheImpossibleQuiz.swf");
+      }
+
+      // Try after a short delay to allow the module to register the custom element
+      setTimeout(mountRuffle, 1200);
+    })();
+  </script>
+</body>
+</html>
